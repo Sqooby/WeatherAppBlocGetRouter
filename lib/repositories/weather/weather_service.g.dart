@@ -13,7 +13,7 @@ class _WeatherApiService implements WeatherApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://api.openweathermap.org/data/2.5/onecall';
+    baseUrl ??= 'http://api.weatherapi.com/v1';
   }
 
   final Dio _dio;
@@ -21,30 +21,28 @@ class _WeatherApiService implements WeatherApiService {
   String? baseUrl;
 
   @override
-  Future<WeatherModel> getWeather(
-    double lat,
-    double lon,
+  Future<Weather> getWeather(
+    String name,
     String apiKey,
-    String units,
+    String aqi,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'lat': lat,
-      r'lon': lon,
-      r'appid': apiKey,
-      r'units': units,
+      r'q': name,
+      r'key': apiKey,
+      r'aqi': aqi,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<WeatherModel>(Options(
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Weather>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '',
+              '/current.json',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -53,7 +51,7 @@ class _WeatherApiService implements WeatherApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = WeatherModel.fromJson(_result.data!);
+    final value = Weather.fromJson(_result.data!);
     return value;
   }
 
