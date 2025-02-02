@@ -13,10 +13,4 @@ abstract class PlaceService {
     @Query('input') String query,
     @Query('key') String apiKey,
   );
-
-  @GET('/details/json')
-  Future<PlaceDetails> getPlaceDetails(
-    @Query('place_id') String placeId,
-    @Query('key') String apiKey,
-  );
 }
