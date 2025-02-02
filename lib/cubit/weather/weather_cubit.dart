@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:weather_app/cubit/weather/weather_state.dart';
 
@@ -10,14 +11,16 @@ class WeatherCubit extends Cubit<WeatherState> {
 
   WeatherCubit(this.weatherService) : super(const WeatherState.initial());
 
-  Future<void> fetchWeather(double lat, double lon, String apiKey) async {
+  Future<void> fetchWeather(String name) async {
+    String apiKey = dotenv.get('APIKEYWEATHER');
     emit(const WeatherState.loading());
     try {
-      final weather =
-          await weatherService.getWeather(lat, lon, apiKey, "metric");
+      final weather = await weatherService.getWeather(name, apiKey, 'no');
+
       emit(WeatherState.loaded(weather));
     } catch (e) {
-      emit(const WeatherState.error("Failed to fetch weather data"));
+      print(e);
+      emit(WeatherState.error(e.toString()));
     }
   }
 }
