@@ -22,6 +22,7 @@ mixin _$PlaceState {
     required TResult Function() loading,
     required TResult Function(List<Place> places) loaded,
     required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$PlaceState {
     TResult? Function()? loading,
     TResult? Function(List<Place> places)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$PlaceState {
     TResult Function()? loading,
     TResult Function(List<Place> places)? loaded,
     TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$PlaceState {
     required TResult Function(PlaceLoading value) loading,
     required TResult Function(PlaceLoaded value) loaded,
     required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$PlaceState {
     TResult? Function(PlaceLoading value)? loading,
     TResult? Function(PlaceLoaded value)? loaded,
     TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$PlaceState {
     TResult Function(PlaceLoading value)? loading,
     TResult Function(PlaceLoaded value)? loaded,
     TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,12 +110,18 @@ class __$$PlaceInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PlaceInitialImpl implements PlaceInitial {
+class _$PlaceInitialImpl with DiagnosticableTreeMixin implements PlaceInitial {
   const _$PlaceInitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'PlaceState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'PlaceState.initial'));
   }
 
   @override
@@ -128,6 +140,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     required TResult Function() loading,
     required TResult Function(List<Place> places) loaded,
     required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
   }) {
     return initial();
   }
@@ -139,6 +152,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     TResult? Function()? loading,
     TResult? Function(List<Place> places)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
   }) {
     return initial?.call();
   }
@@ -150,6 +164,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     TResult Function()? loading,
     TResult Function(List<Place> places)? loaded,
     TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +180,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     required TResult Function(PlaceLoading value) loading,
     required TResult Function(PlaceLoaded value) loaded,
     required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
   }) {
     return initial(this);
   }
@@ -176,6 +192,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     TResult? Function(PlaceLoading value)? loading,
     TResult? Function(PlaceLoaded value)? loaded,
     TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +204,7 @@ class _$PlaceInitialImpl implements PlaceInitial {
     TResult Function(PlaceLoading value)? loading,
     TResult Function(PlaceLoaded value)? loaded,
     TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -218,12 +236,18 @@ class __$$PlaceLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PlaceLoadingImpl implements PlaceLoading {
+class _$PlaceLoadingImpl with DiagnosticableTreeMixin implements PlaceLoading {
   const _$PlaceLoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'PlaceState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'PlaceState.loading'));
   }
 
   @override
@@ -242,6 +266,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     required TResult Function() loading,
     required TResult Function(List<Place> places) loaded,
     required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
   }) {
     return loading();
   }
@@ -253,6 +278,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     TResult? Function()? loading,
     TResult? Function(List<Place> places)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
   }) {
     return loading?.call();
   }
@@ -264,6 +290,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     TResult Function()? loading,
     TResult Function(List<Place> places)? loaded,
     TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +306,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     required TResult Function(PlaceLoading value) loading,
     required TResult Function(PlaceLoaded value) loaded,
     required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
   }) {
     return loading(this);
   }
@@ -290,6 +318,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     TResult? Function(PlaceLoading value)? loading,
     TResult? Function(PlaceLoaded value)? loaded,
     TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +330,7 @@ class _$PlaceLoadingImpl implements PlaceLoading {
     TResult Function(PlaceLoading value)? loading,
     TResult Function(PlaceLoaded value)? loaded,
     TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -347,7 +377,7 @@ class __$$PlaceLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PlaceLoadedImpl implements PlaceLoaded {
+class _$PlaceLoadedImpl with DiagnosticableTreeMixin implements PlaceLoaded {
   const _$PlaceLoadedImpl(final List<Place> places) : _places = places;
 
   final List<Place> _places;
@@ -359,8 +389,16 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'PlaceState.loaded(places: $places)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PlaceState.loaded'))
+      ..add(DiagnosticsProperty('places', places));
   }
 
   @override
@@ -388,6 +426,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     required TResult Function() loading,
     required TResult Function(List<Place> places) loaded,
     required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
   }) {
     return loaded(places);
   }
@@ -399,6 +438,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     TResult? Function()? loading,
     TResult? Function(List<Place> places)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
   }) {
     return loaded?.call(places);
   }
@@ -410,6 +450,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     TResult Function()? loading,
     TResult Function(List<Place> places)? loaded,
     TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -425,6 +466,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     required TResult Function(PlaceLoading value) loading,
     required TResult Function(PlaceLoaded value) loaded,
     required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
   }) {
     return loaded(this);
   }
@@ -436,6 +478,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     TResult? Function(PlaceLoading value)? loading,
     TResult? Function(PlaceLoaded value)? loaded,
     TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
   }) {
     return loaded?.call(this);
   }
@@ -447,6 +490,7 @@ class _$PlaceLoadedImpl implements PlaceLoaded {
     TResult Function(PlaceLoading value)? loading,
     TResult Function(PlaceLoaded value)? loaded,
     TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -498,15 +542,23 @@ class __$$PlaceErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PlaceErrorImpl implements PlaceError {
+class _$PlaceErrorImpl with DiagnosticableTreeMixin implements PlaceError {
   const _$PlaceErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'PlaceState.error(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PlaceState.error'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -533,6 +585,7 @@ class _$PlaceErrorImpl implements PlaceError {
     required TResult Function() loading,
     required TResult Function(List<Place> places) loaded,
     required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
   }) {
     return error(message);
   }
@@ -544,6 +597,7 @@ class _$PlaceErrorImpl implements PlaceError {
     TResult? Function()? loading,
     TResult? Function(List<Place> places)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
   }) {
     return error?.call(message);
   }
@@ -555,6 +609,7 @@ class _$PlaceErrorImpl implements PlaceError {
     TResult Function()? loading,
     TResult Function(List<Place> places)? loaded,
     TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -570,6 +625,7 @@ class _$PlaceErrorImpl implements PlaceError {
     required TResult Function(PlaceLoading value) loading,
     required TResult Function(PlaceLoaded value) loaded,
     required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
   }) {
     return error(this);
   }
@@ -581,6 +637,7 @@ class _$PlaceErrorImpl implements PlaceError {
     TResult? Function(PlaceLoading value)? loading,
     TResult? Function(PlaceLoaded value)? loaded,
     TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
   }) {
     return error?.call(this);
   }
@@ -592,6 +649,7 @@ class _$PlaceErrorImpl implements PlaceError {
     TResult Function(PlaceLoading value)? loading,
     TResult Function(PlaceLoaded value)? loaded,
     TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -608,4 +666,176 @@ abstract class PlaceError implements PlaceState {
   @JsonKey(ignore: true)
   _$$PlaceErrorImplCopyWith<_$PlaceErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PlaceFavoritesLoadedImplCopyWith<$Res> {
+  factory _$$PlaceFavoritesLoadedImplCopyWith(_$PlaceFavoritesLoadedImpl value,
+          $Res Function(_$PlaceFavoritesLoadedImpl) then) =
+      __$$PlaceFavoritesLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Place> favPlaces});
+}
+
+/// @nodoc
+class __$$PlaceFavoritesLoadedImplCopyWithImpl<$Res>
+    extends _$PlaceStateCopyWithImpl<$Res, _$PlaceFavoritesLoadedImpl>
+    implements _$$PlaceFavoritesLoadedImplCopyWith<$Res> {
+  __$$PlaceFavoritesLoadedImplCopyWithImpl(_$PlaceFavoritesLoadedImpl _value,
+      $Res Function(_$PlaceFavoritesLoadedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? favPlaces = null,
+  }) {
+    return _then(_$PlaceFavoritesLoadedImpl(
+      null == favPlaces
+          ? _value._favPlaces
+          : favPlaces // ignore: cast_nullable_to_non_nullable
+              as List<Place>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlaceFavoritesLoadedImpl
+    with DiagnosticableTreeMixin
+    implements PlaceFavoritesLoaded {
+  const _$PlaceFavoritesLoadedImpl(final List<Place> favPlaces)
+      : _favPlaces = favPlaces;
+
+  final List<Place> _favPlaces;
+  @override
+  List<Place> get favPlaces {
+    if (_favPlaces is EqualUnmodifiableListView) return _favPlaces;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favPlaces);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'PlaceState.favoritesLoaded(favPlaces: $favPlaces)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PlaceState.favoritesLoaded'))
+      ..add(DiagnosticsProperty('favPlaces', favPlaces));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlaceFavoritesLoadedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._favPlaces, _favPlaces));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_favPlaces));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PlaceFavoritesLoadedImplCopyWith<_$PlaceFavoritesLoadedImpl>
+      get copyWith =>
+          __$$PlaceFavoritesLoadedImplCopyWithImpl<_$PlaceFavoritesLoadedImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Place> places) loaded,
+    required TResult Function(String message) error,
+    required TResult Function(List<Place> favPlaces) favoritesLoaded,
+  }) {
+    return favoritesLoaded(favPlaces);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Place> places)? loaded,
+    TResult? Function(String message)? error,
+    TResult? Function(List<Place> favPlaces)? favoritesLoaded,
+  }) {
+    return favoritesLoaded?.call(favPlaces);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Place> places)? loaded,
+    TResult Function(String message)? error,
+    TResult Function(List<Place> favPlaces)? favoritesLoaded,
+    required TResult orElse(),
+  }) {
+    if (favoritesLoaded != null) {
+      return favoritesLoaded(favPlaces);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PlaceInitial value) initial,
+    required TResult Function(PlaceLoading value) loading,
+    required TResult Function(PlaceLoaded value) loaded,
+    required TResult Function(PlaceError value) error,
+    required TResult Function(PlaceFavoritesLoaded value) favoritesLoaded,
+  }) {
+    return favoritesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PlaceInitial value)? initial,
+    TResult? Function(PlaceLoading value)? loading,
+    TResult? Function(PlaceLoaded value)? loaded,
+    TResult? Function(PlaceError value)? error,
+    TResult? Function(PlaceFavoritesLoaded value)? favoritesLoaded,
+  }) {
+    return favoritesLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PlaceInitial value)? initial,
+    TResult Function(PlaceLoading value)? loading,
+    TResult Function(PlaceLoaded value)? loaded,
+    TResult Function(PlaceError value)? error,
+    TResult Function(PlaceFavoritesLoaded value)? favoritesLoaded,
+    required TResult orElse(),
+  }) {
+    if (favoritesLoaded != null) {
+      return favoritesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlaceFavoritesLoaded implements PlaceState {
+  const factory PlaceFavoritesLoaded(final List<Place> favPlaces) =
+      _$PlaceFavoritesLoadedImpl;
+
+  List<Place> get favPlaces;
+  @JsonKey(ignore: true)
+  _$$PlaceFavoritesLoadedImplCopyWith<_$PlaceFavoritesLoadedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
