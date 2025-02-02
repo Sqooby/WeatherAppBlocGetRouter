@@ -20,8 +20,9 @@ Place _$PlaceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Place {
+  @JsonKey(name: 'place_id')
   String get placeId => throw _privateConstructorUsedError;
-  String get mainText => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +34,7 @@ abstract class $PlaceCopyWith<$Res> {
   factory $PlaceCopyWith(Place value, $Res Function(Place) then) =
       _$PlaceCopyWithImpl<$Res, Place>;
   @useResult
-  $Res call({String placeId, String mainText});
+  $Res call({@JsonKey(name: 'place_id') String placeId, String description});
 }
 
 /// @nodoc
@@ -50,16 +51,16 @@ class _$PlaceCopyWithImpl<$Res, $Val extends Place>
   @override
   $Res call({
     Object? placeId = null,
-    Object? mainText = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       placeId: null == placeId
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
               as String,
-      mainText: null == mainText
-          ? _value.mainText
-          : mainText // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -72,7 +73,7 @@ abstract class _$$PlaceImplCopyWith<$Res> implements $PlaceCopyWith<$Res> {
       __$$PlaceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String placeId, String mainText});
+  $Res call({@JsonKey(name: 'place_id') String placeId, String description});
 }
 
 /// @nodoc
@@ -87,16 +88,16 @@ class __$$PlaceImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? placeId = null,
-    Object? mainText = null,
+    Object? description = null,
   }) {
     return _then(_$PlaceImpl(
       placeId: null == placeId
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
               as String,
-      mainText: null == mainText
-          ? _value.mainText
-          : mainText // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -105,19 +106,22 @@ class __$$PlaceImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PlaceImpl implements _Place {
-  _$PlaceImpl({required this.placeId, required this.mainText});
+  _$PlaceImpl(
+      {@JsonKey(name: 'place_id') required this.placeId,
+      required this.description});
 
   factory _$PlaceImpl.fromJson(Map<String, dynamic> json) =>
       _$$PlaceImplFromJson(json);
 
   @override
+  @JsonKey(name: 'place_id')
   final String placeId;
   @override
-  final String mainText;
+  final String description;
 
   @override
   String toString() {
-    return 'Place(placeId: $placeId, mainText: $mainText)';
+    return 'Place(placeId: $placeId, description: $description)';
   }
 
   @override
@@ -126,13 +130,13 @@ class _$PlaceImpl implements _Place {
         (other.runtimeType == runtimeType &&
             other is _$PlaceImpl &&
             (identical(other.placeId, placeId) || other.placeId == placeId) &&
-            (identical(other.mainText, mainText) ||
-                other.mainText == mainText));
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, placeId, mainText);
+  int get hashCode => Object.hash(runtimeType, placeId, description);
 
   @JsonKey(ignore: true)
   @override
@@ -150,25 +154,31 @@ class _$PlaceImpl implements _Place {
 
 abstract class _Place implements Place {
   factory _Place(
-      {required final String placeId,
-      required final String mainText}) = _$PlaceImpl;
+      {@JsonKey(name: 'place_id') required final String placeId,
+      required final String description}) = _$PlaceImpl;
 
   factory _Place.fromJson(Map<String, dynamic> json) = _$PlaceImpl.fromJson;
 
   @override
+  @JsonKey(name: 'place_id')
   String get placeId;
   @override
-  String get mainText;
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$PlaceImplCopyWith<_$PlaceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
+PlaceResponse _$PlaceResponseFromJson(Map<String, dynamic> json) {
+  return _PlaceResponse.fromJson(json);
+}
+
 /// @nodoc
 mixin _$PlaceResponse {
   List<Place> get predictions => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PlaceResponseCopyWith<PlaceResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -241,10 +251,13 @@ class __$$PlaceResponseImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$PlaceResponseImpl implements _PlaceResponse {
   _$PlaceResponseImpl({required final List<Place> predictions})
       : _predictions = predictions;
+
+  factory _$PlaceResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaceResponseImplFromJson(json);
 
   final List<Place> _predictions;
   @override
@@ -268,6 +281,7 @@ class _$PlaceResponseImpl implements _PlaceResponse {
                 .equals(other._predictions, _predictions));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_predictions));
@@ -277,151 +291,26 @@ class _$PlaceResponseImpl implements _PlaceResponse {
   @pragma('vm:prefer-inline')
   _$$PlaceResponseImplCopyWith<_$PlaceResponseImpl> get copyWith =>
       __$$PlaceResponseImplCopyWithImpl<_$PlaceResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PlaceResponseImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _PlaceResponse implements PlaceResponse {
   factory _PlaceResponse({required final List<Place> predictions}) =
       _$PlaceResponseImpl;
 
+  factory _PlaceResponse.fromJson(Map<String, dynamic> json) =
+      _$PlaceResponseImpl.fromJson;
+
   @override
   List<Place> get predictions;
   @override
   @JsonKey(ignore: true)
   _$$PlaceResponseImplCopyWith<_$PlaceResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$PlaceDetails {
-  double get lat => throw _privateConstructorUsedError;
-  double get lng => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $PlaceDetailsCopyWith<PlaceDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PlaceDetailsCopyWith<$Res> {
-  factory $PlaceDetailsCopyWith(
-          PlaceDetails value, $Res Function(PlaceDetails) then) =
-      _$PlaceDetailsCopyWithImpl<$Res, PlaceDetails>;
-  @useResult
-  $Res call({double lat, double lng});
-}
-
-/// @nodoc
-class _$PlaceDetailsCopyWithImpl<$Res, $Val extends PlaceDetails>
-    implements $PlaceDetailsCopyWith<$Res> {
-  _$PlaceDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lat = null,
-    Object? lng = null,
-  }) {
-    return _then(_value.copyWith(
-      lat: null == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
-          ? _value.lng
-          : lng // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$PlaceDetailsImplCopyWith<$Res>
-    implements $PlaceDetailsCopyWith<$Res> {
-  factory _$$PlaceDetailsImplCopyWith(
-          _$PlaceDetailsImpl value, $Res Function(_$PlaceDetailsImpl) then) =
-      __$$PlaceDetailsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({double lat, double lng});
-}
-
-/// @nodoc
-class __$$PlaceDetailsImplCopyWithImpl<$Res>
-    extends _$PlaceDetailsCopyWithImpl<$Res, _$PlaceDetailsImpl>
-    implements _$$PlaceDetailsImplCopyWith<$Res> {
-  __$$PlaceDetailsImplCopyWithImpl(
-      _$PlaceDetailsImpl _value, $Res Function(_$PlaceDetailsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lat = null,
-    Object? lng = null,
-  }) {
-    return _then(_$PlaceDetailsImpl(
-      lat: null == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
-          ? _value.lng
-          : lng // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlaceDetailsImpl implements _PlaceDetails {
-  _$PlaceDetailsImpl({required this.lat, required this.lng});
-
-  @override
-  final double lat;
-  @override
-  final double lng;
-
-  @override
-  String toString() {
-    return 'PlaceDetails(lat: $lat, lng: $lng)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlaceDetailsImpl &&
-            (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lng, lng) || other.lng == lng));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, lat, lng);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlaceDetailsImplCopyWith<_$PlaceDetailsImpl> get copyWith =>
-      __$$PlaceDetailsImplCopyWithImpl<_$PlaceDetailsImpl>(this, _$identity);
-}
-
-abstract class _PlaceDetails implements PlaceDetails {
-  factory _PlaceDetails(
-      {required final double lat,
-      required final double lng}) = _$PlaceDetailsImpl;
-
-  @override
-  double get lat;
-  @override
-  double get lng;
-  @override
-  @JsonKey(ignore: true)
-  _$$PlaceDetailsImplCopyWith<_$PlaceDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
