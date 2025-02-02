@@ -3,23 +3,32 @@ import 'package:go_router/go_router.dart';
 import '../../screens/screens.dart';
 
 class Routes {
-// GoRouter configuration
   final router = GoRouter(
     initialLocation: '/',
     routes: [
       GoRoute(
-        name:
-            'home', // Optional, add name to your routes. Allows you navigate by name instead of path
+        name: 'home',
         path: '/',
         builder: (context, state) => HomeScreen(),
+      ),
+      GoRoute(
+        name: 'settings',
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/favorites',
+        builder: (context, state) => const FavoritePlacesScreen(),
       ),
       GoRoute(
           name: 'weatherPlace',
           path: '/weatherPlace',
           builder: (context, state) {
-            final lat = double.parse(state.pathParameters['lat']!);
-            final lon = double.parse(state.pathParameters['lon']!);
-            return WeatherPlaceScreen(lat: lat, lon: lon);
+            final args = state.extra as Map<String, String>;
+            return WeatherPlaceScreen(
+              placeName: args['placeName']!,
+              placeId: args['placeName']!,
+            );
           }),
     ],
   );
